@@ -16,7 +16,7 @@ class EventsFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->title(),
+            'title' => $this->faker->sentence(3),
             'date' => $this->faker->dateTime(),
             'maxparticipants' => $this -> faker->numberBetween(10,25),
             'description' => $this->faker->text(100),
