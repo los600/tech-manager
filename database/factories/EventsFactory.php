@@ -3,7 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Illuminate\Support\Str;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 class EventsFactory extends Factory
 {
     /**
@@ -14,7 +16,12 @@ class EventsFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->title(),
+            'date' => $this->faker->dateTime(),
+            'maxparticipants' => $this -> faker->numberBetween(10,25),
+            'description' => $this->faker->text(100),
+            'image' => $this->faker->imageUrl(),
         ];
     }
 }
+

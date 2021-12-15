@@ -20,7 +20,8 @@ class CreateEventsTable extends Migration
             $table->integer('maxparticipants');
             $table->string('description');
             $table->string('image');
-           
+            $table->timestamps();
+            //$table->timestamp();
         });
     }
 
