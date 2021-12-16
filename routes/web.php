@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [IndexController::class,'index']); 
+
+Route::get('/', [IndexController::class,'index']);
+
     
 
 
