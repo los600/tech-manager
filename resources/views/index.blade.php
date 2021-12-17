@@ -1,59 +1,11 @@
-<!DOCTYPE html>
-<!-- saved from url=(0052)https://getbootstrap.com/docs/5.1/examples/carousel/ -->
-<html lang="en" data-lt-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+@extends('layouts.app')
     
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>TECH EVENT</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
-
-    
-
-    <!-- Bootstrap core CSS -->
-<link href="{{ asset('CarouselTemplate/bootstrap.min.css') }}" rel="stylesheet" >
-
-    <!-- Favicons --> HAVER AHORA!!
-
-
-
-    
-
-    
-    <!-- Custom styles for this template -->
-    
-  <body>
+<body>
     
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Carousel</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
+  
 </header>
-
+@section('content')
 <main>
 
   <div id="myCarousel" class="carousel slide pointer-event" data-bs-ride="carousel">
@@ -145,9 +97,10 @@
     <p>© 2017–2021 Company, Inc. · <a href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Privacy</a> · <a href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Terms</a></p>
   </footer>
 </main>
+<script src="{{ asset('CarouselTemplate/bootstrap.bundle.min.js.descarga') }}" ></script>
+@endsection
 
-
-    <script src="{{ asset('CarouselTemplate/bootstrap.bundle.min.js.descarga') }}" ></script>
+   
 
       
   
