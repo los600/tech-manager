@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Events::factory(3)->create(
+            ["isImportant" => true,]
+        );
         Events::factory(10)->create();
     }
 }
