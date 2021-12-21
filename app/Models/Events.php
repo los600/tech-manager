@@ -12,4 +12,17 @@ class Events extends Model
         'title',
         'img',
     ];
+
+    public function createDb(Request $request){
+
+             $this->validate($request, [
+            'name' => 'required|min:5',
+            'author' => 'required|min:8',
+            'isbn' => 'required'
+             ]);
+
+             Events::create($request->all());
+    return redirect('/table');
+
+    
 }

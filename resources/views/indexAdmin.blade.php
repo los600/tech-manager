@@ -36,7 +36,7 @@
     <!-- START THE FEATURETTES -->
     
       <hr class="featurette-divider">
-      <button type="button" class="btn btn-primary-btn-md">Crear event</button>
+      <a href="" type="button" class="btn btn-primary">Crear event</a>
    
     <hr class="featurette-divider">
    
@@ -49,7 +49,7 @@
         <p class="lead">Event date: {{ $event->date }} </p>
         <p class="lead">Plazas: {{ $event->maxparticipants }} </p>
         <p class="lead">{{ $event->description }}</p>
-        <button type="button" class="btn btn-danger">Delete</button>
+          <button type="button" class="btn btn-danger">Delete</button>
           <button type="button" class="btn btn-success">Edit</button>
       </div>
       <div class="col-md-5">

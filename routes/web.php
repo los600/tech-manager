@@ -28,6 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/indexAdmin', [IndexController::class, 'indexAdmin'])->name('indexAdmin');
    
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 
 
 
