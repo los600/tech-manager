@@ -68,9 +68,16 @@ class EventsController extends Controller
      * @param  \App\Models\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEventsRequest $request, Events $events)
+    public function update(UpdateEventsRequest $request, $id)
     {
-            
+      $eventToUpDate = Events::FindOrFail($id); 
+      $eventToUpDate ->title= $request->input ('title');
+      $eventToUpDate ->date= $request->input ('date'); 
+      $eventToUpDate ->maxparticipants= $request->input ('maxparticipats');
+      $eventToUpDate ->description= $request->input ('description');
+      $eventToUpDate -> save();
+      return back();
+    
     }
 
     /**

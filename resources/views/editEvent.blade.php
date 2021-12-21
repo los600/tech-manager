@@ -3,24 +3,26 @@
 @section('content')
 
 
-<form>
-    <div class="mb-3">
+<form action='{{ route('events.update', $event->id) }}' method="POST">
+    @csrf
+    @method('PUT')
+  <div class="mb-3">
       <label for="text" class="form-label">Title</label>
-        <input type="text" class="form-control" id="">
+        <input type="text" class="form-control" id="" value="{{ $event->title}}">
 
         <div class="mb-3">
             <label for="text" class="form-label">Date</label>
-            <input type="text" class="form-control" id="">
+            <input type="text" class="form-control" id="" value="{{ $event->date}}">
         </div>
     
         <div class="mb-3">
             <label for="text" class="form-label">Max Participants</label>
-            <input type="text" class="form-control" id="">
+            <input type="text" class="form-control" id="" value="{{ $event->maxparticipants}}">
         </div>
 
       <div class="mb-3">
         <label for="text" class="form-label">Description</label>
-        <input type="text" class="form-control" id="">
+        <input type="text" class="form-control" id="" value="{{ $event->description}}">
       </div>  
 
       <div class="mb-3 form-check">
