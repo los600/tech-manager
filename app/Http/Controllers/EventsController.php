@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Events;
 use App\Http\Requests\StoreEventsRequest;
 use App\Http\Requests\UpdateEventsRequest;
+use App\Http\Controllers\IndexController;
 
 class EventsController extends Controller
 {
@@ -79,8 +80,8 @@ class EventsController extends Controller
      * @param  \App\Models\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Events $events)
-    {
-        //
+    public function destroy(Events $id)
+    {   
+        dd($id);
     }
 }

@@ -34,6 +34,8 @@ Route::put('/events/{id}', [EventsController::class, 'update'])->name('events.up
    
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 
+Route::delete('/indexAdmin/{id}',[IndexController::class, 'destroy']);
+
 
 
 
