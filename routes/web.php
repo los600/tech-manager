@@ -4,6 +4,7 @@ use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -31,6 +32,7 @@ Route::get('/indexAdmin', [IndexController::class, 'indexAdmin'])->name('indexAd
 Route::get('/events/edit/{id}', [EventsController::class, 'edit'])->name('events.edit');
 Route::put('/events/{id}', [EventsController::class, 'update'])->name('events.update');
    
+Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 
 
 

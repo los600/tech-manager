@@ -36,7 +36,7 @@
     <!-- START THE FEATURETTES -->
     
       <hr class="featurette-divider">
-      <button type="button" class="btn btn-primary-btn-md">Crear event</button>
+      <a href="" type="button" class="btn btn-primary">Crear event</a>
    
     <hr class="featurette-divider">
    
