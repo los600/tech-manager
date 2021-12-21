@@ -12,6 +12,10 @@ class IndexController extends Controller
         return view('index',['events'=>$events]);
     }
 
+    public function indexAdmin(){
+        $events = Events::all(); // trayedo de la base de datos todos los eventos
+        return view('indexAdmin',['data'=>$events]);// pasando los datos a la vista, y pediendo los datos que nos muestre.
+    }
 
     
 }

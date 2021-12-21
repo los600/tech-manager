@@ -34,9 +34,13 @@
   
 
     <!-- START THE FEATURETTES -->
-
+    
+      <hr class="featurette-divider">
+      <button type="button" class="btn btn-primary-btn-md">Crear event</button>
+   
     <hr class="featurette-divider">
-    @foreach ($events as $event )
+   
+    @foreach ($data as $event )
       
        
     <div class="row featurette">
@@ -45,13 +49,14 @@
         <p class="lead">Event date: {{ $event->date }} </p>
         <p class="lead">Plazas: {{ $event->maxparticipants }} </p>
         <p class="lead">{{ $event->description }}</p>
+        <button type="button" class="btn btn-danger">Delete</button>
+          <button type="button" class="btn btn-success">Edit</button>
       </div>
       <div class="col-md-5">
         <img src="{{ $event->image }}" class="d-block w-50" alt="...">
         <div class="btn-group">
-          <button type="button" class="btn btn-primary">Create</button>
-          <button type="button" class="btn btn-danger">Delete</button>
-          <button type="button" class="btn btn-success">Edit</button>
+         
+          
         </div>
       </div>
     </div>

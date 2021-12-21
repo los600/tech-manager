@@ -3,6 +3,7 @@ use App\Http\Controllers\EventsController;
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 
 
 /*
@@ -25,7 +26,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/indexAdmin', [App\Http\Controllers\HomeController::class, 'indexAdmin'])->name('indexAdmin');
+Route::get('/indexAdmin', [IndexController::class, 'indexAdmin'])->name('indexAdmin');
    
 
 
