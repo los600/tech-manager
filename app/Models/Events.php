@@ -22,7 +22,7 @@ class Events extends Model
              ]);
 
              Events::create($request->all());
-    return redirect('/table');
+            return redirect('/EventsFactory');
 
     
-}
+}};
