@@ -56,9 +56,9 @@ class EventsController extends Controller
      * @param  \App\Models\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function edit(Events $events)
-    {
-        //
+    public function edit($id){
+    $event = Events::FindOrFail($id);
+    return view ('editEvent', ['event'=>$event]);
     }
 
     /**
@@ -70,7 +70,7 @@ class EventsController extends Controller
      */
     public function update(UpdateEventsRequest $request, Events $events)
     {
-        //
+            
     }
 
     /**

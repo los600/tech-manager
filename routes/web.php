@@ -27,6 +27,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/indexAdmin', [IndexController::class, 'indexAdmin'])->name('indexAdmin');
+
+Route::get('/events/edit/{id}', [EventsController::class, 'edit'])->name('events.edit');
+Route::put('/events/{id}', [EventsController::class, 'update'])->name('events.update');
    
 
 

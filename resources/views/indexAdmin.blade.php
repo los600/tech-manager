@@ -50,7 +50,9 @@
         <p class="lead">Plazas: {{ $event->maxparticipants }} </p>
         <p class="lead">{{ $event->description }}</p>
         <button type="button" class="btn btn-danger">Delete</button>
-          <button type="button" class="btn btn-success">Edit</button>
+        <form action='{{route('events.edit', $event->id)}}' method="GET">
+          <button type="submit" class="btn btn-success">Edit</button>
+        </form>
       </div>
       <div class="col-md-5">
         <img src="{{ $event->image }}" class="d-block w-50" alt="...">
