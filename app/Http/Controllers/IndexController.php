@@ -11,4 +11,7 @@ class IndexController extends Controller
         $events = Events::all();
         return view('index',['events'=>$events]);
     }
+
+
+    
 }
