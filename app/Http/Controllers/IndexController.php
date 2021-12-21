@@ -17,5 +17,6 @@ class IndexController extends Controller
         return view('indexAdmin',['data'=>$events]);// pasando los datos a la vista, y pediendo los datos que nos muestre.
     }
 
+
    
 }

@@ -7,6 +7,7 @@ use App\Http\Requests\StoreEventsRequest;
 use App\Http\Requests\UpdateEventsRequest;
 use App\Http\Controllers\IndexController;
 
+
 class EventsController extends Controller
 {
     /**
@@ -82,6 +83,8 @@ class EventsController extends Controller
      */
     public function destroy(Events $id)
     {   
-        dd($id);
+        $eventToDelete = Events::findOrFail($id);
+        $eventToDelete->delete();
+        return back();
     }
 }
