@@ -21,7 +21,7 @@ use App\Http\Controllers\AdminController;
 
 //Route::get('/', [IndexController::class,'index']);
 
-Route::get('/', [IndexController::class,'index'])->name('index');
+Route::get('/', [IndexController::class,'index'])/* ->name('index') */;
 
 Auth::routes();
 
@@ -34,9 +34,9 @@ Route::put('/events/{id}', [EventsController::class, 'update'])->name('events.up
    
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 
-Route::delete('/indexAdmin/{id}',[EventsController::class, 'destroy'])->name('events.destroy');
+Route::delete('/indexAdmin/{id}',[EventsController::class, 'destroy'])/* ->name('events.destroy') */;
 
-Route::get('/indexAdmin', [EventsController::class, 'create'])->name('events.create');
-Route::post('/indexAdmin', [EventsController::class, 'store'])->name('events.store');
+Route::get('/indexAdmin/admin', [EventsController::class, 'create'])->name('events.create');
+Route::post('/indexAdmin/admin', [EventsController::class, 'store'])->name('events.store');
 
 
