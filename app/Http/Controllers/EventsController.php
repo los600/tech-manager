@@ -45,10 +45,10 @@ class EventsController extends Controller
         /* Event::create */
         $data =[
             'title'=> $request->title,
-            'img '=> $request ->img,
-            'date '=> $request ->date,
-            'maxparticipants '=> $request ->maxparticipants,
-            'description '=> $request ->description,
+            'img'=> $request ->img,
+            'date'=> $request ->date,
+            'maxparticipants'=> $request ->maxparticipants,
+            'description'=> $request ->description,
         ];
         Events::create($data);
         return redirect(route('indexAdmin'));

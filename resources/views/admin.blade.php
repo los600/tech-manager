@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>ADMINISTRATOR</h1>
-<form action='{{route (('events.create')) }}' method="POST">
+<form action='{{route ('events.create') }}' method="POST">
   @csrf
 
     <div class="mb-3">
@@ -34,7 +34,7 @@
         <input type="file" class="form-control-file" id="">
       </div>
     
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary">Create</button>
     </div>
 </form>
 @endsection

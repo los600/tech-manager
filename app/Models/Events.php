@@ -10,6 +10,9 @@ class Events extends Model
     use HasFactory;
     protected $filiable =[
         'title',
+        'date',
+        'maxparticipants',
+        'description',
         'img',
     ];
 }
