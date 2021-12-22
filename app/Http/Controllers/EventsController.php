@@ -45,7 +45,7 @@ class EventsController extends Controller
         /* Event::create */
         $data =[
             'title'=> $request->title,
-            'img'=> $request ->img,
+            'image'=> $request ->image,
             'date'=> $request ->date,
             'maxparticipants'=> $request ->maxparticipants,
             'description'=> $request ->description,

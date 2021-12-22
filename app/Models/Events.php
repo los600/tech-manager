@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Events extends Model
 {
     use HasFactory;
-    protected $filiable =[
+    protected $fillable =[
         'title',
         'date',
         'maxparticipants',
         'description',
-        'img',
+        'image',
     ];
 }
 
