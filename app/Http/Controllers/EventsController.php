@@ -81,7 +81,7 @@ class EventsController extends Controller
      * @param  \App\Models\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Events $id)
+    public function destroy($id)
     {   
         $eventToDelete = Events::findOrFail($id);
         $eventToDelete->delete();
