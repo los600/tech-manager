@@ -30,13 +30,15 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/indexAdmin', [IndexController::class, 'indexAdmin'])->name('indexAdmin');
 
 Route::get('/events/edit/{id}', [EventsController::class, 'edit'])->name('events.edit');
+
 Route::put('/events/{id}', [EventsController::class, 'update'])->name('events.update');
+
+Route::get('/indexAdmin/admin', [EventsController::class, 'create'])->name('events.create');
    
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 
 Route::delete('/indexAdmin/{id}',[EventsController::class, 'destroy'])->name('events.destroy');
 
-Route::get('/indexAdmin/admin', [EventsController::class, 'create'])->name('events.create');
 Route::post('/indexAdmin/admin', [EventsController::class, 'store'])->name('events.store');
 
 
