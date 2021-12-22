@@ -2,7 +2,9 @@
 
 @section('content')
 <h1>ADMINISTRATOR</h1>
-<form>
+<form action='{{route (('events.create')) }}' method="POST">
+  @csrf
+
     <div class="mb-3">
       <label for="text" class="form-label">Title</label>
         <input type="text" class="form-control" id="">

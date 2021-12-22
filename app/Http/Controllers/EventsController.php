@@ -6,7 +6,9 @@ use App\Models\Events;
 use App\Http\Requests\StoreEventsRequest;
 use App\Http\Requests\UpdateEventsRequest;
 use App\Http\Controllers\IndexController;
-
+use App\Models\Event;
+use Illuminate\Http\Request;
+use PhpParser\Node\Expr\New_;
 
 class EventsController extends Controller
 {
@@ -27,8 +29,8 @@ class EventsController extends Controller
      */
     public function create()
     {
-        //
-    }
+        return view(route('admin'));
+    } 
 
     /**
      * Store a newly created resource in storage.
@@ -36,9 +38,20 @@ class EventsController extends Controller
      * @param  \App\Http\Requests\StoreEventsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEventsRequest $request)
+    public function store(Request $request)
     {
-        //
+        // dd($request->title);verificar si se sube
+        // $ events = New Event();
+        /* Event::create */
+        $data =[
+            'title'=> $request->title,
+            'img '=> $request ->img,
+            'date '=> $request ->date,
+            'maxparticipants '=> $request ->maxparticipants,
+            'description '=> $request ->description,
+        ];
+        Events::create($data);
+        return redirect(route('indexAdmin'));
     }
 
     /**
@@ -83,8 +96,10 @@ class EventsController extends Controller
      */
     public function destroy($id)
     {   
-        $eventToDelete = Events::findOrFail($id);
-        $eventToDelete->delete();
+        // $eventToDelete = Events::findOrFail($id);
+        // $eventToDelete->delete();
+        Events::destroy ($id);
         return back();
     }
+    
 }

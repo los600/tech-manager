@@ -36,7 +36,7 @@
     <!-- START THE FEATURETTES -->
     
       <hr class="featurette-divider">
-      <a href=" {{route('admin')}}" type="button" class="btn btn-primary">Crear event</a>
+      <a href="" type="button" class="btn btn-primary">Crear event</a>
    
     <hr class="featurette-divider">
    
@@ -45,18 +45,15 @@
        
     <div class="row featurette">
       <div class="col-md-7">
-          <h2 class="featurette-heading">{{ $event->title }} </h2>
-          <p class="lead">Event date: {{ $event->date }} </p>
-          <p class="lead">Plazas: {{ $event->maxparticipants }} </p>
-          <p class="lead">{{ $event->description }}</p>
-
-        <form action="/indexAdmin/{{$event->id}}" method="POST">
-          @method('DELETE')
-          @csrf
-            <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
+        <h2 class="featurette-heading">{{ $event->title }} </h2>
+        <p class="lead">Event date: {{ $event->date }} </p>
+        <p class="lead">Plazas: {{ $event->maxparticipants }} </p>
+        <p class="lead">{{ $event->description }}</p>
+        
+        <button type="button" class="btn btn-danger">Delete</button>
+        @method('DELETE')
         <form action='{{route('events.edit', $event->id)}}' method="GET">
-               <button type="submit" class="btn btn-success">Edit</button>
+          <button type="submit" class="btn btn-success">Edit</button>
         </form>
       </div>
       <div class="col-md-5">

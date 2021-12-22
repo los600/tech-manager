@@ -36,6 +36,7 @@ Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 
 Route::delete('/indexAdmin/{id}',[EventsController::class, 'destroy']);
 
-
+Route::get('/indexAdmin/admin )', [EventsController::class, 'create'])->name('events.create');
+Route::post('/indexAdmin/admin)', [EventsController::class, 'store'])->name('events.store');
 
 
