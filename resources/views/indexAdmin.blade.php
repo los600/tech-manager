@@ -49,7 +49,7 @@
         <p class="lead">Event date: {{ $event->date }} </p>
         <p class="lead">Plazas: {{ $event->maxparticipants }} </p>
         <p class="lead">{{ $event->description }}</p>
-
+        
         <form action="/indexAdmin/ {{$event->id}}" method="POST">
           @method('DELETE')
           @csrf
