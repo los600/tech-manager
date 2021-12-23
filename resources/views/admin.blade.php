@@ -26,7 +26,7 @@
 
       <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="">
-        <label class="form-check-label" for="exampleCheck1">Important</label>
+        <label name="isImportant" class="form-check-label" for="exampleCheck1">Important</label>
       </div>
 
       <div class="form-group">
