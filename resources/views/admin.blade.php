@@ -37,6 +37,6 @@
         <br>
        
   </div>  
-  <button type="submit" class="card-body-btn btn-primary">Create</button>
+  <button type="submit" class="card-body-btn btn-info">Create</button>
 </form>
 @endsection
