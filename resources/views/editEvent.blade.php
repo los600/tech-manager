@@ -30,9 +30,9 @@
         <label class="form-check-label" for="exampleCheck1">Important</label>
       </div>
 
-      <div class="form-group">
-        <label for="image">Image</label>
-        <input type="file" name= "image" class="form-control-file" value= "{{ $event->image }}">
+      <div class="mb-3">
+        <label for="image" class="form-label">Image</label>
+        <input type="text" name= "image" class="form-control" value="{{ $event->image }}">
       </div>
 
       <input type="hidden" name="id" value= "{{ $event->id }} " >
