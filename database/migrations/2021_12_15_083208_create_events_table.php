@@ -22,7 +22,6 @@ class CreateEventsTable extends Migration
             $table->string('image');
             $table->timestamps();
             $table->boolean('isImportant');
-            //$table->timestamp();
         });
     }
 
