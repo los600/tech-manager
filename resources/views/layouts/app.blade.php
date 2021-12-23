@@ -46,11 +46,13 @@
       </style>
 </head>
 <body>
-    <div id="app">
+    
+      
         @component('components.header')
             
         @endcomponent
-        <main class="py-4">
+       
+        <main>
             @yield('content')
         </main>
         @component('components.footer')
@@ -58,7 +60,7 @@
         @endcomponent
 
        
-    </div>
+   
 <script src="{{ asset('CarouselTemplate/bootstrap.bundle.min.js.descarga') }}" ></script>
 </body>
 </html>
