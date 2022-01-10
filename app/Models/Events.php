@@ -13,6 +13,7 @@ class Events extends Model
         'date',
         'maxparticipants',
         'description',
+        'isImportant',
         'image',
     ];
 }
