@@ -1,44 +1,9 @@
 @extends('layouts.app')
     
-<body>
+
 @section('content')
     
-<header>
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Carousel</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-        </ul>
-        @if (Route::has('login'))
-          <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-              @auth
-                  <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-        @else
-                  <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">LogIn</a>
-  
-                  @if (Route::has('register'))
-                      <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                  @endif
-              @endauth
-          </div>
-        @endif
-      </div>
-    </div>
-  </nav>
-</header>
+
 <main>
   
 
@@ -97,13 +62,7 @@
     </button>
   </div>
 
-  <!-- Marketing messaging and featurettes
-  ================================================== -->
-  <!-- Wrap the rest of the page in another container to center all the content. -->
 
-  
-
-    <!-- START THE FEATURETTES -->
 
     <hr class="featurette-divider">
     @foreach ($events as $event )
@@ -128,13 +87,8 @@
     
 
 
-  <!-- FOOTER -->
-  <footer class="container">
-    <p class="float-end"><a href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Back to top</a></p>
-    <p>© 2017–2021 Company, Inc. · <a href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Privacy</a> · <a href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Terms</a></p>
-  </footer>
-</main>
-<script src="{{ asset('CarouselTemplate/bootstrap.bundle.min.js.descarga') }}" ></script>
+
+ 
 @endsection
 
    
@@ -142,4 +96,3 @@
       
   
 
-<div></div></body></html>

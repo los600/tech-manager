@@ -87,10 +87,17 @@ class EventsController extends Controller
      * @param  \App\Models\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEventsRequest $request, Events $events)
+    public function update(Request $request, $id)
     {
-            
-    }
+        $eventUpdate = Events::findOrFail($id);
+        $eventUpdate -> title= $request -> input('title');
+        $eventUpdate -> date= $request -> input('date');
+        $eventUpdate -> description= $request -> input('description');
+        $eventUpdate -> image= $request -> input('image');
+        $eventUpdate->save();
+
+        return redirect (route ('indexAdmin'));
+    } 
 
     /**
      * Remove the specified resource from storage.
