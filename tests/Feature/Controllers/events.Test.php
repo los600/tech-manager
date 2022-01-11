@@ -13,7 +13,7 @@ class events extends TestCase
      *
      * @return void
      */
-    public function test_auth_user_can_see_an_event_create()
+    public function test_auth_user_can_see_an_event_list()
     {
         $response = $this->get('/');
 
