@@ -31,5 +31,6 @@ class IndexControllersTest extends TestCase
         $response->assertSee ($events [0]-> title);
     }
 
+    
 
 }
