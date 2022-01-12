@@ -4,8 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Auth;
-
+use Illuminate\Support\Facades\Auth;
 
 class Admin
 {
@@ -17,8 +16,11 @@ class Admin
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next){
-    //  if(!Auth::user()) return redirect(route('login'));
-    if (Auth::user()->isAdmin) return $next($request);
-        return back();
+        //if(!Auth::user()) return redirect(route('login'));
+        if (Auth::user()-> isAdmin == true){
+        return $next($request);
+        } 
+        return redirect()->to('/home');
+        
     }
 }
