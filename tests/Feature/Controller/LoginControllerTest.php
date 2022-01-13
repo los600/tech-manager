@@ -5,6 +5,7 @@ namespace Tests\Feature\Controller;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use Illuminate\Foundation\Auth\User;
 
 class LoginControllerTest extends TestCase
 {
@@ -15,11 +16,11 @@ class LoginControllerTest extends TestCase
      */
     public function test_admin_redirect()
     {
-        $admin=
+        $admin= User::factory()->create();
         $response = $this
-        ->actingAs($admin);
-        ->get(routes('indexAdmin'));
+        ->actingAs($admin)
+        ->get(route('indexAdmin'));
 
-        $response->assertStatus(200);
+        $response->assertRedirect(route('indexAdmin'));
     }
 }

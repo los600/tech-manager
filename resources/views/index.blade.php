@@ -24,9 +24,9 @@
 
         <div class="container">
           <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Learn more</a></p>
+            <h1>hola</h1>
+            <p>hola</p>
+            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Subscribe</a></p>
           </div>
         </div>
       </div> 
@@ -39,9 +39,9 @@
 
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Sign up today</a></p>
+            <h1>{{ $event->title }}.</h1>
+            <p>{{ $event->description }}</p>
+            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Subscribe</a></p>
           </div>
         </div>
       </div>
@@ -77,7 +77,9 @@
       </div>
       <div class="col-md-5">
         <img src="{{ $event->image }}" class="d-block w-50" alt="...">
-        
+      <div>
+      <a class="btn btn-lg btn-primary" href="">Subcribe</a>
+      </div>
       </div>
     </div>
     

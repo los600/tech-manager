@@ -1,5 +1,5 @@
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top">
       
             
             <a class="navbar-brand pl-5" href="{{ url('/') }}">
