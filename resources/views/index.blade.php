@@ -33,9 +33,9 @@
       @endif
           
         
-
+      @foreach ($events as $event )
       <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+        <img src="{{ $event->image }} class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><>
 
         <div class="container">
           <div class="carousel-caption text-start">
@@ -46,7 +46,7 @@
         </div>
       </div>
      
-      
+      @endforeach
       @endfor
     </div>
 
