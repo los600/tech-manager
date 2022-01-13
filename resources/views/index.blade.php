@@ -24,8 +24,8 @@
 
         <div class="container">
           <div class="carousel-caption">
-            <h1>hola</h1>
-            <p>hola</p>
+            <h1>Evento</h1>
+            <p>Descripción de evento</p>
             <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Subscribe</a></p>
           </div>
         </div>
@@ -49,8 +49,6 @@
       @endforeach
       @endfor
     </div>
-
-
 
     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
