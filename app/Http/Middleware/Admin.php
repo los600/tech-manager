@@ -16,11 +16,12 @@ class Admin
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function handle(Request $request, Closure $next){
-        //if(!Auth::user()) return redirect(route('login'));
+        if(!Auth::user()) return redirect(route('login'));
         if (Auth::user()-> isAdmin == true){
-        return $next($request);
+            
+            return $next($request);
         } 
-        return redirect()->to('/home');
+        return redirect()->to('/');
         
     }
 }
