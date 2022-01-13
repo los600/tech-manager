@@ -1,0 +1,14 @@
+@import url('indexAdmin');
+
+
+.container{
+    margin:50px;
+}
+.container-btn{
+    margin-bottom: 20px;
+}
+
+.btn-create{
+    display: flex;
+    flex-direction: row-reverse;
+}
