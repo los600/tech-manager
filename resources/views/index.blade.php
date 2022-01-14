@@ -67,24 +67,35 @@
     <hr class="featurette-divider">
     @foreach ($events as $event )
       
-       
-    <div class="row featurette">
-      <div class="col-md-7">
+    <div class="container">
+      <div class="card-d">
         <h2 class="featurette-heading">{{ $event->title }} </h2>
-        <p class="lead">Event date: {{ $event->date }} </p>
-        <p class="lead">Plazas: {{ $event->maxparticipants }} </p>
-        <p class="lead">{{ $event->description }}</p>
+        <div class="col-md-5">
+          <img src="{{ $event->image }}" class="d-block w-50" alt="...">
       </div>
-      <div class="col-md-5">
-        <img src="{{ $event->image }}" class="d-block w-50" alt="...">
-      <div>
-      <a class="btn btn-lg btn-primary" href="">Subcribe</a>
-      </div>
+            <div clas="card-d-flex justify-content-center">
+              <p class="lead">Event date: {{ $event->date }} </p>
+              <p class="lead">Plazas: {{ $event->maxparticipants }} </p>
+              <p class="lead">{{ $event->description }}</p>
+            </div>
+              <div class="container-btn">
+                <form action="/indexAdmin/ {{$event->id}}" method="POST">
+                  @method('DELETE')
+                  @csrf
+                    <div class="container-btn">
+                      <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+                <br>
+                <form action='{{route('events.edit', $event->id)}}' method="GET">
+                  <button type="submit" class="btn btn-success">Edit</button>
+                </form>
+              </div>
+    
       </div>
     </div>
-    
-    <hr class="featurette-divider">
-    
+  
+  <hr class="featurette-divider">
     @endforeach
     
 

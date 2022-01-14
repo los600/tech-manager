@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
   
 @section('content')
  
@@ -31,6 +31,7 @@
                       <button type="submit" class="btn btn-danger">Delete</button>
                     </div>
                 </form>
+                <br>
                 <form action='{{route('events.edit', $event->id)}}' method="GET">
                   <button type="submit" class="btn btn-success">Edit</button>
                 </form>

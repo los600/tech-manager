@@ -1,5 +1,5 @@
 @import url('indexAdmin');
-
+@import url('index');
 
 .container{
     margin:50px;
@@ -9,6 +9,6 @@
 }
 
 .btn-create{
-    display: flex;
-    flex-direction: row-reverse;
+    background-color: yellow;
+    
 }
