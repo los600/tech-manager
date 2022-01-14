@@ -47,14 +47,14 @@
 </head>
 <body>
     
-      
         @component('components.header')
             
         @endcomponent
        
-        <main>
-            @yield('content')
-        </main>
+        
+        @yield('content')
+      
+
         @component('components.footer')
             
         @endcomponent
