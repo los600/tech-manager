@@ -4,7 +4,7 @@
 @section('content')
  
     
-     <div class="btn-create">
+     <div class="card-body">
       <a href="/admin" type="button" class="btn btn-primary">Create event</a>
     </div>
  

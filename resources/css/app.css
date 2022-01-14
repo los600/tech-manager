@@ -1,5 +1,6 @@
 @import url('indexAdmin');
 @import url('index');
+@import url('/');
 
 .container{
     margin:50px;
@@ -8,7 +9,11 @@
     margin-bottom: 20px;
 }
 
-.btn-create{
-    background-color: yellow;
+.boton-create{
+    margin: 50px;
     
 }
+
+
+
+/* card-body col-7 */
