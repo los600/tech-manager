@@ -77,17 +77,7 @@
               <p class="lead">{{ $event->description }}</p>
             </div>
               <div class="container-btn">
-                <form action="/indexAdmin/ {{$event->id}}" method="POST">
-                  @method('DELETE')
-                  @csrf
-                    <div class="container-btn">
-                      <button type="submit" class="btn btn-danger">Delete</button>
-                    </div>
-                </form>
-                <br>
-                <form action='{{route('events.edit', $event->id)}}' method="GET">
-                  <button type="submit" class="btn btn-success">Edit</button>
-                </form>
+                <a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Subscribe</a>
               </div>
     
       </div>
