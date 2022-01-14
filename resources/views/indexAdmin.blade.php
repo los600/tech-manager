@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
   
 @section('content')
  
