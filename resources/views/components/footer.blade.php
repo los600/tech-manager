@@ -1,7 +1,7 @@
 
-    <footer class="bg-dark text-center text-white fixed-bottom">
+    <footer class=".bg-white text-center text-dark">
        
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <div class="text-center p-3">
           © 2021 Copyright: Tech Event
         </div>
         
