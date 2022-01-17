@@ -27,6 +27,7 @@ class UserTest extends TestCase
         $user->eventSubscription()->attach($event);
         $user->eventSubscription()->attach($event2);
         //dd($user->eventsSubscriptions()->count());//
+<<<<<<< HEAD
         $this->assertEquals(2, $user->eventSubscription()->count());
         $this->assertEquals(1, $event->userSubscription()->count());
         
@@ -38,6 +39,10 @@ class UserTest extends TestCase
         $user-> eventSubscription()->attach($event); //que el usuario pueda suscribirse a un evento
 
         $this-> assertTrue($user->isSubscribed($event)); //muestra que el usuario está suscrito al evento mediante valor true
+=======
+        $this->assertEquals(2, $user->eventsSubscriptions()->count());
+        $this->assertEquals(1, $event->userSubscriptions()->count());
+>>>>>>> c1ef9267b2d60775f98213fc87332185e513f466
         
     }
 }
