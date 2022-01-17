@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
        );
        Events::factory()->create(
             ["image" => "https://www.lavanguardia.com/files/image_449_220/uploads/2021/03/18/60539e3985667.jpeg"]
-        );*/
+        );
     
     } 
 }
