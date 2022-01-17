@@ -16,10 +16,10 @@ class EventsFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->sentence(3),
+            'title' => $this->faker->sentence(),
             'date' => $this->faker->dateTime(),
-            'maxparticipants' => $this -> faker->numberBetween(10,25),
-            'description' => $this->faker->text(100),
+            'maxparticipants' => $this -> faker->numberBetween(),
+            'description' => $this->faker->text(),
             'image' => $this->faker->imageUrl(),
             'isImportant' => false,
         ];

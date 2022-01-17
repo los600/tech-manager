@@ -50,15 +50,15 @@ class EventsController extends Controller
         ]); */
         
       
-       /*  $data =[
+        $data =[
             'title'=> $request->title,
             'image'=> $request ->image,
             'date'=> $request ->date,
             'maxparticipants'=> $request ->maxparticipants,
             'description'=> $request ->description,
             'isImportant'=> $request ->isImportant ? true : false,
-        ]; */
-        $data=$request->all();
+        ];
+        
         if ($request->hasFile('image')){
             $data['image']=
             $request->file('image')->store('img','public');
