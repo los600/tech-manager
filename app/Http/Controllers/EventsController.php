@@ -7,6 +7,7 @@ use App\Http\Requests\StoreEventsRequest;
 use App\Http\Requests\UpdateEventsRequest;
 use App\Http\Controllers\IndexController;
 use App\Models\Event;
+use App\Models\User;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\New_;
 
@@ -119,6 +120,15 @@ class EventsController extends Controller
         // $eventToDelete->delete();
         Events::destroy ($id);
         return back();
+    }
+
+    public function calendar($id)
+    {
+        $event = User::find($id);
+
+        dd($event->created_at->addDays());
+
+        return view ('event.create');
     }
     
 }

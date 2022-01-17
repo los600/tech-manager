@@ -75,6 +75,7 @@
               <p class="lead">Event date: {{ $event->date }} </p>
               <p class="lead">Plazas: {{ $event->maxparticipants }} </p>
               <p class="lead">{{ $event->description }}</p>
+              <p class="lead">{{$event ->image}}</p>
             </div>
               <div class="container-btn">
                 <a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Subscribe</a>

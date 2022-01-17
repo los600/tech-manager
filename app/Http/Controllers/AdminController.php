@@ -6,7 +6,7 @@ use App\Models\Events;
 
 class AdminController extends Controller{
 
-    public function admin(){
+    public function index(){
         $events = Events::all(); // trayedo de la base de datos todos los eventos
         return view('admin');// pasando los datos a la vista, y pediendo los datos que nos muestre.
     }
