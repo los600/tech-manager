@@ -19,8 +19,8 @@ class LoginControllerTest extends TestCase
         $admin= User::factory()->create();
         $response = $this
         ->actingAs($admin)
-        ->get(route('indexAdmin'));
+        ->get(route('admin'));
 
-        $response->assertRedirect(route('indexAdmin'));
+        $response->assertRedirect(route('admin'));
     }
 }

@@ -41,9 +41,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-     public function eventsSubscriptions(){
+     public function eventSubscription(){
          return $this->belongsToMany(Events::class);
      }
 
-     
+     public function isSubscribed($event){
+         if ($this->eventSubscription()->find($event)) return true;
+         return false;
+
+
+
+     }
 }

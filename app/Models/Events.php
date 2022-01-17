@@ -18,7 +18,7 @@ class Events extends Model
         'image',
     ];
 
-    public function userSubscriptions() {
+    public function userSubscription() {
         return $this->BelongsToMany(User::class);
     }
 }

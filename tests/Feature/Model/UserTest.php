@@ -24,11 +24,20 @@ class UserTest extends TestCase
         $event = Events::factory()->create();
         $event2 = Events::factory()->create();
 
-        $user->eventsSubscriptions()->attach($event);
-        $user->eventsSubscriptions()->attach($event2);
+        $user->eventSubscription()->attach($event);
+        $user->eventSubscription()->attach($event2);
         //dd($user->eventsSubscriptions()->count());//
-        $this->assertEquals(2, $user->eventsSubscriptions()->count());
-        $this->assertEquals(2, $event->userSubscriptions()->count());
+        $this->assertEquals(2, $user->eventSubscription()->count());
+        $this->assertEquals(1, $event->userSubscription()->count());
+        
+    }
+
+    public function test_user_can_know_when_is_subscribed_an_event(){
+        $user = User::factory()->create();
+        $event = Events::factory()->create();
+        $user-> eventSubscription()->attach($event); //que el usuario pueda suscribirse a un evento
+
+        $this-> assertTrue($user->isSubscribed($event)); //muestra que el usuario está suscrito al evento mediante valor true
         
     }
 }
