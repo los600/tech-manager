@@ -28,7 +28,7 @@ class UserTest extends TestCase
         $user->eventsSubscriptions()->attach($event2);
         //dd($user->eventsSubscriptions()->count());//
         $this->assertEquals(2, $user->eventsSubscriptions()->count());
-        $this->assertEquals(2, $event->userSubscriptions()->count());
+        $this->assertEquals(1, $event->userSubscriptions()->count());
         
     }
 }
