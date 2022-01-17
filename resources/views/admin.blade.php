@@ -2,7 +2,7 @@
 
 @section('content')
 <h1 class="card-header">ADMINISTRATOR</h1>
-<form class="card-body" action='{{route ('events.create') }}' method="POST">
+<form class="card-body" enctype="multipart/form-data" action='{{route ('events.create') }}' method="POST">
   @csrf
   <div class="card-d-flex justify-content-center">
         <div class="card-body">

@@ -69,7 +69,7 @@
       <div class="card-d">
         <h2 class="featurette-heading">{{ $event->title }} </h2>
         <div class="col-md-5">
-          <img src="{{ $event->image }}" class="d-block w-50" alt="...">
+          <img src="{{ asset('storage').'/'.$event->image }}" class="d-block w-50" alt="...">
       </div>
             <div clas="card-d-flex justify-content-center">
               <p class="lead">Event date: {{ $event->date }} </p>
