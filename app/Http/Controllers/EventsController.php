@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Events;
 use App\Http\Requests\StoreEventsRequest;
 use App\Http\Requests\UpdateEventsRequest;
+use App\Http\Controllers\IndexController;
+use App\Models\Event;
+use App\Models\User;
+use Illuminate\Http\Request;
+use PhpParser\Node\Expr\New_;
 
 class EventsController extends Controller
 {
@@ -25,8 +30,8 @@ class EventsController extends Controller
      */
     public function create()
     {
-        //
-    }
+        return view(route('admin'));
+    } 
 
     /**
      * Store a newly created resource in storage.
@@ -34,9 +39,32 @@ class EventsController extends Controller
      * @param  \App\Http\Requests\StoreEventsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEventsRequest $request)
+    public function store(Request $request)
     {
-        //
+         //dd($request->image);
+        
+        
+       
+       /*   $request->validate([
+            'image' => 'required|image|max:2048'
+        ]); */
+        
+      
+       /*  $data =[
+            'title'=> $request->title,
+            'image'=> $request ->image,
+            'date'=> $request ->date,
+            'maxparticipants'=> $request ->maxparticipants,
+            'description'=> $request ->description,
+            'isImportant'=> $request ->isImportant ? true : false,
+        ]; */
+        $data=$request->all();
+        if ($request->hasFile('image')){
+            $data['image']=
+            $request->file('image')->store('img','public');
+        };
+        Events::create($data);
+        return redirect(route('indexAdmin'));
     }
 
     /**
@@ -56,9 +84,9 @@ class EventsController extends Controller
      * @param  \App\Models\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function edit(Events $events)
-    {
-        //
+    public function edit($id){
+    $event = Events::FindOrFail($id);
+    return view ('editEvent', ['event'=>$event]);
     }
 
     /**
@@ -68,10 +96,17 @@ class EventsController extends Controller
      * @param  \App\Models\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEventsRequest $request, Events $events)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $eventUpdate = Events::findOrFail($id);
+        $eventUpdate -> title= $request -> input('title');
+        $eventUpdate -> date= $request -> input('date');
+        $eventUpdate -> description= $request -> input('description');
+        $eventUpdate -> image= $request -> input('image');
+        $eventUpdate->save();
+
+        return redirect (route ('indexAdmin'));
+    } 
 
     /**
      * Remove the specified resource from storage.
@@ -79,8 +114,21 @@ class EventsController extends Controller
      * @param  \App\Models\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Events $events)
-    {
-        //
+    public function destroy($id)
+    {   
+        // $eventToDelete = Events::findOrFail($id);
+        // $eventToDelete->delete();
+        Events::destroy ($id);
+        return back();
     }
+
+    public function calendar($id)
+    {
+        $event = User::find($id);
+
+        dd($event->created_at->addDays());
+
+        return view ('event.create');
+    }
+    
 }

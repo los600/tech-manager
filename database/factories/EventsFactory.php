@@ -21,6 +21,7 @@ class EventsFactory extends Factory
             'maxparticipants' => $this -> faker->numberBetween(10,25),
             'description' => $this->faker->text(100),
             'image' => $this->faker->imageUrl(),
+            'isImportant' => false,
         ];
     }
 }
