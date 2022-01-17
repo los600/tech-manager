@@ -26,7 +26,9 @@
           <div class="carousel-caption">
             <h1>Evento</h1>
             <p>Descripción de evento</p>
-            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Subscribe</a></p>
+        @auth
+            <p><a class="btn btn-lg btn-primary" href="/">{{$btnSus}}/a></p>
+        @endauth           
           </div>
         </div>
       </div> 
@@ -41,7 +43,17 @@
           <div class="carousel-caption text-start">
             <h1>{{ $event->title }}.</h1>
             <p>{{ $event->description }}</p>
-            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Subscribe</a></p>
+          @auth
+            @php
+              if (Auth::user()->isSubscribed($event)){$btnSus= 'Inscrito!';}
+              if (!Auth::user()->isSubscribed($event)){$btnSus= 'Suscribirse';}
+            @endphp
+         
+           
+            <p><a class="btn btn-lg btn-primary" href="/">{{$btnSus}}/a></p>
+          
+          @endauth  
+                   
           </div>
         </div>
       </div>
@@ -77,9 +89,17 @@
               <p class="lead">{{ $event->description }}</p>
               <p class="lead">{{$event ->image}}</p>
             </div>
-              <div class="container-btn">
-                <a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Subscribe</a>
-              </div>
+            @auth
+            @php
+              if (Auth::user()->isSubscribed($event)){$btnSus = "Inscrito!";}
+              if (!Auth::user()->isSubscribed($event)){$btnSus = "Suscribirse";}//minuto 42.58 (laravel many to many)
+              
+            @endphp
+         
+           
+            <p><a class="btn btn-lg btn-primary" href="/">{{$btnSus}}/a></p>
+          
+          @endauth  
     
       </div>
     </div>

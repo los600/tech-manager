@@ -3,11 +3,12 @@
   
 @section('content')
  
-    
+  
+        
      <div class="card-body">
       <a href="/admin" type="button" class="btn btn-primary">Create event</a>
     </div>
- 
+    
    
     @foreach ($data as $event )
     
@@ -23,7 +24,9 @@
               <p class="lead">Plazas: {{ $event->maxparticipants }} </p>
               <p class="lead">{{ $event->description }}</p>
             </div>
-              <div class="container-btn">
+
+            
+               <div class="container-btn">
                 <form action="/indexAdmin/ {{$event->id}}" method="POST">
                   @method('DELETE')
                   @csrf
@@ -36,6 +39,8 @@
                   <button type="submit" class="btn btn-success">Edit</button>
                 </form>
               </div>
+             
+
     
       </div>
     </div>
