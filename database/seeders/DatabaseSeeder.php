@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         
         ])->create();
 
-        Events::factory()->create(
+         Events::factory()->create(
             ["isImportant" => true,
             "image"=>"https://cdn2.unrealengine.com/17br-comp-samsung-galaxycup2-0-newsheader-1900x600-1900x600-72b148107260.jpg",
             ]
@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
        );
        Events::factory()->create(
             ["image" => "https://www.lavanguardia.com/files/image_449_220/uploads/2021/03/18/60539e3985667.jpeg"]
-        );
+        );*/
     
-    }
+    } 
 }
