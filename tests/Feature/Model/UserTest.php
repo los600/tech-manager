@@ -18,13 +18,17 @@ class UserTest extends TestCase
      *
      * @return void
      */
-    public function test_user_can_suscribe_can_event()
+    public function test_user_can_suscribe_an_event()
     {
         $user = User::factory()->create();
         $event = Events::factory()->create();
+        $event2 = Events::factory()->create();
 
         $user->eventsSubscriptions()->attach($event);
-        dd($user->eventsSubscriptions());
-        $this->assertEquals(1, $event->Subscribe()->count());
+        $user->eventsSubscriptions()->attach($event2);
+        //dd($user->eventsSubscriptions()->count());//
+        $this->assertEquals(2, $user->eventsSubscriptions()->count());
+        $this->assertEquals(2, $event->userSubscriptions()->count());
+        
     }
 }
