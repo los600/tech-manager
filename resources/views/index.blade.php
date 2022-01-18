@@ -30,7 +30,7 @@
     
           
         
-      @for ($i= 1; $i <= 2; $i++)
+      @for ($i= 0; $i <= 1; $i++)
       <div class="carousel-item">
         <img src="{{ asset('storage').'/'.$events[$i]->image }}" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><>
 
