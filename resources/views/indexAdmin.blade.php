@@ -3,11 +3,14 @@
   
 @section('content')
  
-  
+<div class="container-fluid h-100"> 
+  <div class="row w-100 align-items-center">
+    <div class="col text-center m-5">
+      <a href="/admin" type="button" class="btn btn-primary">Create Event</a>
+    </div>	
+  </div>
         
-    <div class="card-body">
-      <a href="/admin" type="button" class="btn btn-primary">Create event</a>
-    </div>
+   
             
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 justify-content-center align-self-center">
       @foreach ($data as $event )
