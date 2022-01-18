@@ -27,7 +27,11 @@
             <h1>Evento</h1>
             <p>Descripción de evento</p>
         @auth
-            <p><a class="btn btn-lg btn-primary" href="/">{{$btnSus}}/a></p>
+            {{-- @php
+              if (Auth::user()->isSubscribed($event)){$btnSus= 'Inscrito!';}
+              if (!Auth::user()->isSubscribed($event)){$btnSus= 'Suscribirse';}
+            @endphp --}}
+            {{-- <p><button class="btn btn-lg btn-primary" href="/">{{$btnSus}}</button></p> --}}
         @endauth           
           </div>
         </div>
@@ -44,13 +48,12 @@
             <h1>{{ $event->title }}.</h1>
             <p>{{ $event->description }}</p>
           @auth
-            @php
-              if (Auth::user()->isSubscribed($event)){$btnSus= 'Inscrito!';}
-              if (!Auth::user()->isSubscribed($event)){$btnSus= 'Suscribirse';}
-            @endphp
-         
-           
-            <p><a class="btn btn-lg btn-primary" href="/">{{$btnSus}}/a></p>
+          @php
+          if (Auth::user()->isSubscribed($event)){$btnSus= 'Inscrito!';}
+          if (!Auth::user()->isSubscribed($event)){$btnSus= 'Suscribirse';}
+        @endphp
+                   
+            <p><button class="btn btn-lg btn-primary" href="/">{{$btnSus}}</button></p>
           
           @endauth  
                    
@@ -95,11 +98,9 @@
               if (!Auth::user()->isSubscribed($event)){$btnSus = "Suscribirse";}//minuto 42.58 (laravel many to many)
               
             @endphp
-         
-           
-            <p><a class="btn btn-lg btn-primary" href="/">{{$btnSus}}/a></p>
-          
-          @endauth  
+                    
+            <p><button class="btn btn-lg btn-primary" href="/">{{$btnSus}}</button></p>
+           @endauth  
     
       </div>
     </div>
