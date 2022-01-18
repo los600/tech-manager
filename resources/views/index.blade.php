@@ -24,6 +24,17 @@
             <h1>{{$events[0]->title}}</h1>
             <p>{{$events[0]->description}}</p>
             <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Subscribe</a></p>
+    <div class="carousel-inner">
+      
+      @forelse ($events as $event )
+           <div class="carousel-item @if ($loop->index==0) active @endif">
+            <img src="{{ asset('storage').'/'.$event->image }}" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><>
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>{{ $event->title }}.</h1>
+            <p>{{ $event->description }}</p>
+            <p><a class="btn btn-lg btn-primary" href="">Subscribe</a></p>
           </div>
         </div>
       </div> 
@@ -31,20 +42,27 @@
           
         
       @for ($i= 1; $i <= 2; $i++)
+        
+      @empty
+     @endforelse
+
+          
+        
+      @forelse ($events as $event )
       <div class="carousel-item">
         <img src="{{ asset('storage').'/'.$events[$i]->image }}" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><>
 
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>{{ $events[$i] ->title }}.</h1>
-            <p>{{ $events[$i]->description }}</p>
-            <p><a class="btn btn-lg btn-primary" href="https://getbootstrap.com/docs/5.1/examples/carousel/#">Subscribe</a></p>
+            <h1>{{ $event->title }}.</h1>
+            <p>{{ $event->description }}</p>
+            <p><a class="btn btn-lg btn-primary" href="">Subscribe</a></p>
           </div>
         </div>
       </div>
-     
-      @endfor
-      
+      @empty
+      @endforelse
+    
     </div>
 
     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
