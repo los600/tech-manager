@@ -5,28 +5,21 @@
  
   
         
-     <div class="card-body">
+    <div class="card-body">
       <a href="/admin" type="button" class="btn btn-primary">Create event</a>
     </div>
-    
-   
-    @foreach ($data as $event )
-    
-       
-    <div class="container">
-      <div class="card-d">
-        <h2 class="featurette-heading">{{ $event->title }} </h2>
-        <div class="col-md-5">
-          <img src="{{ asset('storage').'/'.$event->image }}" class="d-block w-50" alt="...">
-      </div>
-            <div clas="card-d-flex justify-content-center">
-              <p class="lead">Event date: {{ $event->date }} </p>
-              <p class="lead">Plazas: {{ $event->maxparticipants }} </p>
-              <p class="lead">{{ $event->description }}</p>
-            </div>
-
             
-               <div class="container-btn">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 justify-content-center align-self-center">
+      @foreach ($data as $event )
+      <div class="card m-5"  style="width: 18rem;">
+        <img class="card-img-top" src="{{ asset('storage').'/'.$event->image }}" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ $event->title }}</h5>
+            <p class="card-text">{{ $event->description }}</p>
+            <p class="card-text">{{ $event->date }}</p>
+            <p class="card-text">{{ $event->maxparticipants }}</p>
+            
+                <div class="container-btn">
                 <form action="/indexAdmin/ {{$event->id}}" method="POST">
                   @method('DELETE')
                   @csrf
@@ -39,21 +32,10 @@
                   <button type="submit" class="btn btn-success">Edit</button>
                 </form>
               </div>
-             
-
-    
+        </div>
       </div>
+      @endforeach
     </div>
-  
-  <hr class="featurette-divider">
-  
-    
-    @endforeach
-    
-
-
-
-
 @endsection
 
 
