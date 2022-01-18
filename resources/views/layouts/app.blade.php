@@ -31,6 +31,8 @@
     <link href="{{ asset('CarouselTemplate/carousel.css') }}" rel="stylesheet">
     <meta name="chromesniffer" id="chromesniffer_meta" content="{&quot;Bootstrap&quot;:-1}"><script type="text/javascript" src="chrome-extension://fhhdlnnepfjhlhilgmeepgkhjmhhhjkh/js/detector.js"></script></head>
     <style>
+
+
         .bd-placeholder-img {
           font-size: 1.125rem;
           text-anchor: middle;
@@ -44,7 +46,22 @@
             font-family: 'PT Sans', sans-serif;
             font-size: 3.5rem;
           }
+
         }
+
+        .card-img-top {
+          width: 100%;
+          height: 15vw;
+          object-fit: cover;
+        }
+
+        .carousel-item {
+          height: 80vh;
+          min-height: 300px;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
       </style>
 </head>
 <body>
