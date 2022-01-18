@@ -14,8 +14,9 @@
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
     </div>
 
-
-
+    @foreach ($events as $event )
+      
+    
     <div class="carousel-inner" role="listbox">  
       <div class="carousel-item active">
         <img src="{{ asset('storage').'/'.$events[0]->image  }}" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><>
@@ -23,7 +24,8 @@
           <div class="carousel-caption">
             <h1>{{$events[0]->title}}</h1>
             <p>{{$events[0]->description}}</p>
-    {{--     @auth
+    
+            {{--     @auth
             @php
               if (Auth::user()->isSubscribed($event)){$btnSus= 'Inscrito!';}
               if (!Auth::user()->isSubscribed($event)){$btnSus= 'Suscribirse';}
@@ -35,18 +37,20 @@
           </div>
         </div>
       </div> 
-    
+      @endforeach
           
         
-      @for ($i= 0; $i <= 1; $i++)
+      @foreach ($events as $event)
+        
       <div class="carousel-item">
-        <img src="{{ asset('storage').'/'.$events[$i]->image }}" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><>
-
+        <img src="{{ asset('storage').'/'.$event->image }}" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><>
+        
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>{{ $events[$i]->title }}.</h1>
-            <p>{{ $events[$i]->description }}</p>
-      {{--     @auth
+            <h1>{{ $event->title }}.</h1>
+            <p>{{ $event->description }}</p>
+      
+            {{--     @auth
           @php
           if (Auth::user()->isSubscribed($event)){$btnSus= 'Inscrito!';}
           if (!Auth::user()->isSubscribed($event)){$btnSus= 'Suscribirse';}
@@ -61,7 +65,7 @@
         </div>
       </div>
      
-      @endfor
+      @endforeach
       
     </div>
 
