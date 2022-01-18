@@ -96,6 +96,7 @@ class EventsController extends Controller
      * @param  \App\Models\Events  $events
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function update(Request $request, $id)
     {
         $eventUpdate = Events::findOrFail($id);
@@ -107,6 +108,19 @@ class EventsController extends Controller
 
         return redirect (route ('indexAdmin'));
     } 
+=======
+    public function update(UpdateEventsRequest $request, $id)
+    {
+      $eventToUpDate = Events::FindOrFail($id); 
+      $eventToUpDate ->title= $request->input ('title');
+      $eventToUpDate ->date= $request->input ('date'); 
+      $eventToUpDate ->maxparticipants= $request->input ('maxparticipats');
+      $eventToUpDate ->description= $request->input ('description');
+      $eventToUpDate -> save();
+      return back();
+    
+    }
+>>>>>>> 002a9a11f4e2cfe86b9202cff61594d91df1adc9
 
     /**
      * Remove the specified resource from storage.
