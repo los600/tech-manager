@@ -19,11 +19,9 @@
                   <input name= "maxparticipants" type="text" class="form-control" id="">
                   <label for="text" class="form-label">Description</label>
                   <input name= "description" type="text" class="form-control" id="">
-                  
-              
+                            
                   <label for="exampleFormControlFile1">Image</label>
                   <input name= "image" type="file" class="form-control-file" id="">
-                  
                   <input name="isImportant" type="checkbox" class="form-check-input" id="">
                   <label class="form-check-label" for="exampleCheck1">Important</label>
                 </div>
