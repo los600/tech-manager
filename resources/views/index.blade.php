@@ -68,6 +68,41 @@
       <div class="col text-center">
         <button class="btn btn-secondary regular-button"> My Events </button>
       </div>	
+
+
+
+    <hr class="featurette-divider">
+    @foreach ($events as $event )
+      
+    <div class="container">
+      <div class="card-d">
+        <h2 class="featurette-heading">{{ $event->title }} </h2>
+        <div class="col-md-5">
+          <img src="{{ asset('storage').'/'.$event->image }}" class="d-block w-50" alt="...">
+      </div>
+            <div clas="card-d-flex justify-content-center">
+              <p class="lead">Event date: {{ $event->date }} </p>
+              <p class="lead">Plazas: {{ $event->maxparticipants }} </p>
+              <p class="lead">{{ $event->description }}</p>
+              <p class="lead">{{$event ->image}}</p>
+            </div>
+            @auth
+            @php
+              if (Auth::user()->isSubscribed($event)) {
+                $btnSus = "Inscrito!"; 
+                $btColor="btn btn-lg btn-success";
+              }
+              if (!Auth::user()->isSubscribed($event)) {
+                $btnSus = "Suscribirse"; 
+                $btColor="btn btn-lg btn-primary";
+              }//minuto 42.58 (laravel many to many)
+              
+            @endphp
+                    
+            <a href="{{route('event.subscribe', $event->id)}}"><button type="button" class="{{$btColor}}">{{$btnSus}}</button></a>
+           @endauth  
+    
+      </div>
     </div>
   @endauth
   

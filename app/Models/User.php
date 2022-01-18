@@ -49,7 +49,5 @@ class User extends Authenticatable
          if ($this->eventSubscription()->find($event)) return true;
          return false;
 
-
-
      }
 }
