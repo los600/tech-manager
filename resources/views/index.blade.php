@@ -9,60 +9,60 @@
 
   <div id="myCarousel" class="carousel slide pointer-event" data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="" aria-current="true"></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
     </div>
 
 
 
-    <div class="carousel-inner">
-      @for ($i = 0; $i < 4; $i++)
-      @if ($i== 0)
+    <div class="carousel-inner" role="listbox">  
       <div class="carousel-item active">
-        <svg src="" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-
+        <img src="{{ asset('storage').'/'.$events[0]->image  }}" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><>
         <div class="container">
           <div class="carousel-caption">
-            <h1>Evento</h1>
-            <p>Descripción de evento</p>
-        @auth
-            {{-- @php
+            <h1>{{$events[0]->title}}</h1>
+            <p>{{$events[0]->description}}</p>
+    {{--     @auth
+            @php
               if (Auth::user()->isSubscribed($event)){$btnSus= 'Inscrito!';}
               if (!Auth::user()->isSubscribed($event)){$btnSus= 'Suscribirse';}
-            @endphp --}}
-            {{-- <p><button class="btn btn-lg btn-primary" href="/">{{$btnSus}}</button></p> --}}
-        @endauth           
+            @endphp 
+            <p><button class="btn btn-lg btn-primary" href="/">{{$btnSus}}</button></p>
+        @endauth      --}}      
+           
+            
           </div>
         </div>
       </div> 
-      @endif
+    
           
         
-      @foreach ($events as $event )
+      @for ($i= 0; $i <= 1; $i++)
       <div class="carousel-item">
-        <img src="{{ $event->image }} class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><>
+        <img src="{{ asset('storage').'/'.$events[$i]->image }}" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect><>
 
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>{{ $event->title }}.</h1>
-            <p>{{ $event->description }}</p>
-          @auth
+            <h1>{{ $events[$i]->title }}.</h1>
+            <p>{{ $events[$i]->description }}</p>
+      {{--     @auth
           @php
           if (Auth::user()->isSubscribed($event)){$btnSus= 'Inscrito!';}
           if (!Auth::user()->isSubscribed($event)){$btnSus= 'Suscribirse';}
         @endphp
                    
-            <p><button class="btn btn-lg btn-primary" href="/">{{$btnSus}}</button></p>
+           <p><button class="btn btn-lg btn-primary" href="/">{{$btnSus}}</button></p> 
           
-          @endauth  
+          @endauth   --}}
                    
+            
           </div>
         </div>
       </div>
      
-      @endforeach
       @endfor
+      
     </div>
 
     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
