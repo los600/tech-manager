@@ -61,7 +61,16 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
+  @auth
+   
+   <div class="container-fluid h-100"> 
+    <div class="row w-100 align-items-center">
+      <div class="col text-center">
+        <button class="btn btn-secondary regular-button"> My Events </button>
+      </div>	
+    </div>
+  @endauth
+  
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2 justify-content-center align-self-center">
       @foreach ($events as $event )
       <div class="card m-5"  style="width: 18rem;">
