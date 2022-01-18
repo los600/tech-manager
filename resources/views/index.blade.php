@@ -94,12 +94,18 @@
             </div>
             @auth
             @php
-              if (Auth::user()->isSubscribed($event)){$btnSus = "Inscrito!";}
-              if (!Auth::user()->isSubscribed($event)){$btnSus = "Suscribirse";}//minuto 42.58 (laravel many to many)
+              if (Auth::user()->isSubscribed($event)) {
+                $btnSus = "Inscrito!"; 
+                $btColor="btn btn-lg btn-success";
+              }
+              if (!Auth::user()->isSubscribed($event)) {
+                $btnSus = "Suscribirse"; 
+                $btColor="btn btn-lg btn-primary";
+              }//minuto 42.58 (laravel many to many)
               
             @endphp
                     
-            <p><button class="btn btn-lg btn-primary" href="/">{{$btnSus}}</button></p>
+            <a href="{{route('event.subscribe', $event->id)}}"><button type="button" class="{{$btColor}}">{{$btnSus}}</button></a>
            @endauth  
     
       </div>

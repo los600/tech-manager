@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
 
 class LoginControllerTest extends TestCase
 {
@@ -16,11 +17,9 @@ class LoginControllerTest extends TestCase
      */
     public function test_admin_redirect()
     {
-        $admin= User::factory()->create();
-        $response = $this
-        ->actingAs($admin)
-        ->get(route('admin'));
+        $admin= Auth::factory()->create();
+        $this->actingAs($admin)->get(route('events.create'));
 
-        $response->assertRedirect(route('admin'));
+        $this->indexAdmin(route('events.create'));
     }
 }
