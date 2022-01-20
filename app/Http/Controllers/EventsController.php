@@ -143,9 +143,8 @@ class EventsController extends Controller
         
 
     }
-    public function isFull($event){
-        if(event)
-    
-    }
+    // public function isFull($event){
+        
+    // }
     
 }
