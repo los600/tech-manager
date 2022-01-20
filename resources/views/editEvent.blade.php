@@ -5,44 +5,47 @@
 <form action='{{route ('events.update', $event->id) }}' method="POST">
   @method('PUT')
   @csrf
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <h2 class="card-header">{{ __('Edit Event') }}</h2>
+              <div class="formulario p-4">
+                <div class="col-13">
+                  <div class="form-group ">
+                    <label for="text" class="form-label">Title</label>
+                    <input type="text" name="title" class="form-control" value= "{{ $event->title }} " > 
+                    <label  for="text" class="form-label">Date</label>                                           
+                    <input type="text" name="date" class="form-control" value= "{{ $event->date }}">
+                    <label for="text" class="form-label">Max Participants</label>
+                    <input type="text" name="maxparticipants" class="form-control" value= "{{ $event->maxparticipants }}">
+                    <label for="text" class="form-label">Description</label>
+                    <input type="text" name="description" class="form-control" value= "{{ $event->description }}">
+                    <div class="mt-3">
+                    <input name="isImportant" type="checkbox" class="form-check-input" id="">
+                    <label class="form-check-label" for="exampleCheck1">Important</label>
+                    </div>
+                     <br>         
+                    <label for="exampleFormControlFile1">Image</label>
+                    <br>
+                    <div class="mt-3">
+                    <input type="text" name= "image" class="form-control" value="{{ $event->image }}">
+                    </div>
+                    <input type="hidden" name="id" value= "{{ $event->id }} " >
+                  </div>
+                </div>
+              </div>  
 
-<form action='{{ route('events.update', $event->id) }}' method="POST">
-    @csrf
-    @method('PUT')
-  <div class="mb-3">
-      <label for="text" class="form-label">Title</label>
-        <input type="text" class="form-control" id="" value="{{ $event->title}}">
-
-        <div class="mb-3">
-            <label for="text" class="form-label">Date</label>
-            <input type="text" class="form-control" id="" value="{{ $event->date}}">
+                    <div class="p-4">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    </div>  
         </div>
-    
-        <div class="mb-3">
-            <label for="text" class="form-label">Max Participants</label>
-            <input type="text" class="form-control" id="" value="{{ $event->maxparticipants}}">
-        </div>
-
-      <div class="mb-3">
-        <label for="text" class="form-label">Description</label>
-        <input type="text" class="form-control" id="" value="{{ $event->description}}">
-      </div>  
-
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="">
-        <label class="form-check-label" for="exampleCheck1">Important</label>
       </div>
-
-      <div class="mb-3">
-        <label for="image" class="form-label">Image</label>
-        <input type="text" name= "image" class="form-control" value="{{ $event->image }}">
-      </div>
-
-      <input type="hidden" name="id" value= "{{ $event->id }} " >
-    
-        <button type="submit" class="btn btn-primary">Update</button>
-    </div>
+  </div>
 
 </form>
+
+   
+
 
 @endsection

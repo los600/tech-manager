@@ -30,7 +30,7 @@
     <link href="{{ asset('CarouselTemplate/bootstrap.min.css') }}" rel="stylesheet" >
     <link href="{{ asset('CarouselTemplate/carousel.css') }}" rel="stylesheet">
     <meta name="chromesniffer" id="chromesniffer_meta" content="{&quot;Bootstrap&quot;:-1}"><script type="text/javascript" src="chrome-extension://fhhdlnnepfjhlhilgmeepgkhjmhhhjkh/js/detector.js"></script></head>
-    <style>
+   <style>
 
 
         .bd-placeholder-img {
@@ -79,7 +79,7 @@
         @endcomponent
 
        
-   
+     
 <script src="{{ asset('CarouselTemplate/bootstrap.bundle.min.js.descarga') }}" ></script>
 </body>
 </html>
