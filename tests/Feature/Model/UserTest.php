@@ -21,7 +21,7 @@ class UserTest extends TestCase
     public function test_user_can_suscribe_an_event()
     {
         $user = User::factory()->create();
-        $event = Events::factory()->create();
+        $event = Events::factory()->create();// factory me devuelve un array
         $event2 = Events::factory()->create();
 
         $user->eventSubscription()->attach($event);
