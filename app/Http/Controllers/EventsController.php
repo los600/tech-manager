@@ -143,8 +143,17 @@ class EventsController extends Controller
         
 
     }
+<<<<<<< HEAD
     // public function isFull($event){
         
     // }
+=======
+    public function isFull($event){
+        if 'maxparticipants'=> 1;
+        return true;
+        
+    
+    }
+>>>>>>> 7746cf398fde64ed98ce815495285545b3e20ca8
     
 }
