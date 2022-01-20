@@ -10,6 +10,7 @@ use App\Models\Event;
 use App\Models\User;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\New_;
+use Illuminate\Support\Facades\Auth;
 
 class EventsController extends Controller
 {
@@ -143,6 +144,18 @@ class EventsController extends Controller
         dd($event->created_at->addDays());
 
         return view ('event.create');
+    }
+    public function togglesusbcribe($id){
+
+      if(!Auth::user()->isSubscribed($id)){
+        Auth::user()-> eventSubscription()->attach($id);
+        return back();
+
+      }
+      Auth::user()-> eventSubscription()->detach($id);
+      return back();
+        
+
     }
     
 }
