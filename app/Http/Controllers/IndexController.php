@@ -10,7 +10,7 @@ class IndexController extends Controller
 {
     public function index(){
         $events = Events::all();
-        return view('index',['events'=>$events]);
+        return view('login',['events'=>$events]);
     }
 
     public function indexAdmin(){

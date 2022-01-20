@@ -18,9 +18,9 @@ class IndexControllersTest extends TestCase
     public function test_user_see_index()
     {
         $user= User::factory()->create();
-        $response = $this->get(route('index', $user));
+        $response = $this->get(route('index',$user));
         $response->assertStatus(200);
-        ->assertViewIs('index');
+       
     }
 
     public function test_user_can_see_all_events(){
@@ -31,6 +31,7 @@ class IndexControllersTest extends TestCase
 
         $response->assertSee ($events [0]-> title);
     }
+    
 
     
 
