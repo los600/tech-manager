@@ -144,7 +144,9 @@ class EventsController extends Controller
 
     }
     public function isFull($event){
-        if(event)
+        if 'maxparticipants'=> 1;
+        return true;
+        
     
     }
     

@@ -12,7 +12,7 @@ class Events extends Model
     protected $fillable =[
         'title',
         'date',
-        'maxparticipants',
+        'maxParticipants',
         'description',
         'isImportant',
         'image',
@@ -20,6 +20,15 @@ class Events extends Model
 
     public function userSubscription() {
         return $this->BelongsToMany(User::class);
+    }
+    public function isFull(){
+        $userCount= $this-> userSubscription()->count();
+        if ($this->maxParticipants == $userCount){
+            return true;
+        }
+        return false;
+        
+    
     }
 }
 
