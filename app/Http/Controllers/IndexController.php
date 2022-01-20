@@ -18,4 +18,9 @@ class IndexController extends Controller
         return view('indexAdmin',['data'=>$events]);// pasando los datos a la vista, y pediendo los datos que nos muestre.
     }
 
+    public function showEvents(){
+        $events = Events::orderBy('date', 'ASC')->get();
+        return view('myEvents',['events'=>$events]);// pasando los datos a la vista, y pediendo los datos que nos muestre.
+    }
+
 }

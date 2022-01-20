@@ -141,9 +141,4 @@ class EventsController extends Controller
       Auth::user()-> eventSubscription()->detach($id);
       return back();
     }
-
-    public function showEvents($id){
-        
-    }
-    
 }

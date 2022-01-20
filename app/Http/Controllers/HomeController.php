@@ -30,8 +30,4 @@ class HomeController extends Controller
         return view('indexAdmin');
     }
 
-    public function showEvents(){
-        return view ('myEvents');
-    }
-
 }
