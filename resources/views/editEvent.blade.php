@@ -5,7 +5,7 @@
 <form action='{{route ('events.update', $event->id) }}' method="POST">
   @method('PUT')
   @csrf
-  <div class="container">
+  <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
@@ -37,7 +37,7 @@
               </div>  
 
                     <div class="p-4">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                     </div>  
         </div>
       </div>

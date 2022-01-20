@@ -3,7 +3,7 @@
 @section('content')
 <form class="card-body" enctype="multipart/form-data" action='{{route ('events.create') }}' method="POST">
   @csrf
-<div class="container">
+<div class="container mt-5">
   <div class="row justify-content-center">
       <div class="col-md-6">
           <div class="card">
@@ -20,7 +20,7 @@
                   <label for="text" class="form-label">Description</label>
                   <input name= "description" type="text" class="form-control" id="" required>
                   <div class="mt-3">
-                  <input name="isImportant" type="checkbox" class="form-check-input" id="" required>
+                  <input name="isImportant" type="checkbox" class="form-check-input" id="">
                   <label class="form-check-label" for="exampleCheck1">Important</label>
                   </div>
                    <br>         

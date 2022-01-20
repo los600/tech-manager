@@ -22,19 +22,16 @@
             <p class="card-text">{{ $event->date }}</p>
             <p class="card-text">{{ $event->maxparticipants }}</p>
             
-                <div class="container-btn">
-                <form action="/indexAdmin/ {{$event->id}}" method="POST">
-                  @method('DELETE')
-                  @csrf
-                    <div class="container-btn">
-                      <button type="submit" class="btn btn-danger">Delete</button>
-                    </div>
-                </form>
-                <br>
-                <form action='{{route('events.edit', $event->id)}}' method="GET">
-                  <button type="submit" class="btn btn-success">Edit</button>
-                </form>
-              </div>
+                <div class="form-group">
+                  <form action="/indexAdmin/ {{$event->id}}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
+                  <form action='{{route('events.edit', $event->id)}}' method="GET">
+                    <button type="submit" class="btn btn-success">Edit</button>
+                  </form>
+                </div>
         </div>
       </div>
       @endforeach
