@@ -62,7 +62,7 @@
         <div class="container-fluid h-100"> 
               <div class="row w-100 align-items-center">
                 <div class="col text-center">
-                  <button class="btn btn-secondary regular-button"> My Events </button>
+                  <a href="/myEvents"><button class="btn btn-secondary regular-button"> My Events </button></a>
                 </div>
         @endauth
         

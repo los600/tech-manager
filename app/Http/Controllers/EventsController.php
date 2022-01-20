@@ -97,19 +97,6 @@ class EventsController extends Controller
      * @param  \App\Models\Events  $events
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    public function update(Request $request, $id)
-    {
-        $eventUpdate = Events::findOrFail($id);
-        $eventUpdate -> title= $request -> input('title');
-        $eventUpdate -> date= $request -> input('date');
-        $eventUpdate -> description= $request -> input('description');
-        $eventUpdate -> image= $request -> input('image');
-        $eventUpdate->save();
-
-        return redirect (route ('indexAdmin'));
-    } 
-=======
     public function update(UpdateEventsRequest $request, $id)
     {
       $eventToUpDate = Events::FindOrFail($id); 
@@ -121,7 +108,6 @@ class EventsController extends Controller
       return back();
     
     }
->>>>>>> 002a9a11f4e2cfe86b9202cff61594d91df1adc9
 
     /**
      * Remove the specified resource from storage.
@@ -154,8 +140,10 @@ class EventsController extends Controller
       }
       Auth::user()-> eventSubscription()->detach($id);
       return back();
-        
+    }
 
+    public function showEvents($id){
+        
     }
     
 }
