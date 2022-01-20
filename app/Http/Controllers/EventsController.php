@@ -11,6 +11,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\New_;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class EventsController extends Controller
 {
@@ -97,15 +98,15 @@ class EventsController extends Controller
      * @param  \App\Models\Events  $events
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEventsRequest $request, $id)
+    public function update( Request $request, $id)
     {
       $eventToUpDate = Events::FindOrFail($id); 
       $eventToUpDate ->title= $request->input ('title');
       $eventToUpDate ->date= $request->input ('date'); 
-      $eventToUpDate ->maxparticipants= $request->input ('maxparticipats');
+      $eventToUpDate ->maxparticipants= $request->input ('maxparticipants');
       $eventToUpDate ->description= $request->input ('description');
       $eventToUpDate -> save();
-      return back();
+      return redirect(route('indexAdmin'));
     
     }
 
