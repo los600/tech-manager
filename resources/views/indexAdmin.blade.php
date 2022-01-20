@@ -26,7 +26,7 @@
                   <form action="/indexAdmin/ {{$event->id}}" method="POST">
                     @method('DELETE')
                     @csrf
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i>Delete</button>
                   </form>
                   <form action='{{route('events.edit', $event->id)}}' method="GET">
                     <button type="submit" class="btn btn-success">Edit</button>
