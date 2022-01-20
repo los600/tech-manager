@@ -28,6 +28,9 @@ class EventsControllerTest extends TestCase
 
         
     }
+    
+
+    
     // test user suscribe  can unsuscribe
 
     
