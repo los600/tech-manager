@@ -6,23 +6,26 @@
   @method('PUT')
   @csrf
 
-    <div class="mb-3">
-      <label for="title" class="form-label">Title</label>
-        <input type="text" name="title" class="form-control" value= "{{ $event->title }} " >
+<form action='{{ route('events.update', $event->id) }}' method="POST">
+    @csrf
+    @method('PUT')
+  <div class="mb-3">
+      <label for="text" class="form-label">Title</label>
+        <input type="text" class="form-control" id="" value="{{ $event->title}}">
 
         <div class="mb-3">
-            <label for="date" class="form-label">Date</label>
-            <input type="text" name="date" class="form-control" value= "{{ $event->date }}">
+            <label for="text" class="form-label">Date</label>
+            <input type="text" class="form-control" id="" value="{{ $event->date}}">
         </div>
     
         <div class="mb-3">
-            <label for="maxparticipants" class="form-label">Max Participants</label>
-            <input type="text" name="maxparticipants" class="form-control" value= "{{ $event->maxparticipants }}">
+            <label for="text" class="form-label">Max Participants</label>
+            <input type="text" class="form-control" id="" value="{{ $event->maxparticipants}}">
         </div>
 
       <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-        <input type="text" name="description" class="form-control" value= "{{ $event->description }}">
+        <label for="text" class="form-label">Description</label>
+        <input type="text" class="form-control" id="" value="{{ $event->description}}">
       </div>  
 
       <div class="mb-3 form-check">
