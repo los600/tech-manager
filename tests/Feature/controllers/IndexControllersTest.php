@@ -19,7 +19,7 @@ class IndexControllersTest extends TestCase
     {
         $user= User::factory()->create();
         $response = $this->get(route('index', $user));
-        $response->assertStatus(200);
+        $response->assertStatus(200)
         ->assertViewIs('index');
     }
 
@@ -31,7 +31,4 @@ class IndexControllersTest extends TestCase
 
         $response->assertSee ($events [0]-> title);
     }
-
-    
-
 }
