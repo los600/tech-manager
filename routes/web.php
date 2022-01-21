@@ -27,6 +27,8 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/susbcribe/{id}', [EventsController::class, 'togglesusbcribe'])->name('event.subscribe')->middleware('auth');
+Route::get('/myEvents', [IndexController::class, 'showEvents'])->name('myEvents');
+
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/indexAdmin', [IndexController::class, 'indexAdmin'])->name('indexAdmin');
