@@ -60,7 +60,11 @@
           min-height: 300px;
           background-repeat: no-repeat;
           background-size: cover;
+          overflow:hidden;
+
         }
+
+       
 
       </style>
 </head>

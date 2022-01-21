@@ -32,7 +32,7 @@ class EventsController extends Controller
      */
     public function create()
     {
-        return view(route('admin'));
+        return view ('admin');
     } 
 
     /**
