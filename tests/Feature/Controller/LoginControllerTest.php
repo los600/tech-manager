@@ -14,7 +14,7 @@ class LoginControllerTest extends TestCase
      *
      * @return void
      */
-    public function test_admin_redirect()
+    public function test_admin_show_view_to_create_events()
 
     {
         $admin= User::factory()->create(['isAdmin'=> true]);
